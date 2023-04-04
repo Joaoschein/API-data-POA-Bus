@@ -1,0 +1,5 @@
+rootProject.name = 'Data-POA-Bus'
+include 'commons'
+include 'contract'
+include 'impl'
+
