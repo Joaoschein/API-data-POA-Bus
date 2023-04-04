@@ -20,9 +20,7 @@ public class BusController {
     @GetMapping
     public List<LinhasModel> getAll () {
         return busLineService.getAllBusLines();
-
     }
-
     @GetMapping(path = "/busName/{name}")
     public LinhasModel GetByName(@PathVariable String name) {
         return busLineService.getBusByName(name);
@@ -33,8 +31,12 @@ public class BusController {
         return busLineService.getItinerario(id);
     }
 
-    @PostMapping(path = "/save")
+    @PostMapping(path = "/saveBusLine")
     public LinhasModel saveLine(@RequestBody LinhasModel linhasModel) {
         return busLineService.save(linhasModel);
+    }
+    @PutMapping(path = "/updateBusLine")
+    public void updateLine(@RequestBody LinhasModel linhasModel) {
+        busLineService.update(linhasModel);
     }
 }
